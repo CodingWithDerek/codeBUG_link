@@ -1,0 +1,18 @@
+wxml:
+<van-uploader file-list="{{tempAddress}}" bind:after-read="getTemp" bind:delete="deleteImg" max-count="1" />
+
+js:
+Page({
+  data:{
+    tempAddress:[]
+  }
+  onShow:function(){
+    console.log("onShow已经执行过了")
+  },
+  getTemp: function(e) {
+    console.log("getTemp已经执行过了")
+    this.setData({
+      ["tempAddress[0]"]: e.detail.file
+    })
+  },
+})
