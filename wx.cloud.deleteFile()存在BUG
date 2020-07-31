@@ -1,0 +1,13 @@
+<!--wxml-->
+<button bindtap="ceshi">测试</button>
+
+<!--wxjs-->
+ceshi:function(){
+wx.cloud.deleteFile({
+  fileList:["fileID"]  <!--官方人员可以将此fileID替换成云存储下的图片fileID和云存储子文件夹下的图片fileID进行测试-->
+}).then(res=>{
+  console.log(res)
+}).catch(err=>{
+  console.log(err)
+})
+}
