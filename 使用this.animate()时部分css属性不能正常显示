@@ -24,6 +24,12 @@ wxss:
 }
 
 wxjs:
+onLoad: function () {
+    let list = [];
+    for (let i = 0; i < 100; ++i)
+      list.push(i);
+    this.setData({ list })
+  },
 f2:function(e){
     this.animate("#kuang",[{
       rotate:0,
