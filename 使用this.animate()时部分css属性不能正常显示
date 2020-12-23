@@ -1,0 +1,46 @@
+wxml:
+<scroll-view scroll-y style="height:200px;" id="fa"  bindscroll="f2">
+  <view wx:for="{{list}}" class="son">{{ item }}</view>
+  <view id="kuang"></view>
+</scroll-view>
+
+wxss:
+.son{
+  height: 25px;
+}
+.son:nth-child(odd){
+  background-color: aqua;
+}
+.son:nth-child(even){
+  background-color: #ff1d11;
+}
+#kuang{
+  width: 100rpx;
+  height: 150rpx;
+  background-color: yellow;
+  border: 3px solid #ff1d11;
+  position: fixed;
+  bottom: 0;
+}
+
+wxjs:
+f2:function(e){
+    this.animate("#kuang",[{
+      rotate:0,
+      backgroundColor:'green',
+      scale:[1,1],
+      borderRadius:"25%",
+      translateX:0
+    },{
+      rotate:45,
+      backgroundColor:"blue",
+      scale:[4,4],
+      borderRadius:"40%",
+      translateX:40
+    }],3000,{
+      scrollSource: '#fa',
+      timeRange: 3000,
+      startScrollOffset: 10,
+      endScrollOffset: 200
+    })
+  },
