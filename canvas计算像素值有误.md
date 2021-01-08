@@ -1,15 +1,17 @@
 > wxml
-
-  <canvas class="canvas1" type="2d" canvas-id="c1"></canvas>
+```
+<canvas class="canvas1" type="2d" canvas-id="c1"></canvas>
+```
 > wxss
-
+```
   .canvas1{
   height: 500px;
   width: 300px;
   background-color: #f1f1f1;
 }
+```
 > wxjs
-
+```
   onLoad() {
     wx.createSelectorQuery().select(".canvas1").node(res=>{
       console.log(res)
@@ -22,3 +24,4 @@
     // context.setFillStyle('red')
     // context.fillRect(10,10,150,75)
   },
+  ```
