@@ -1,12 +1,15 @@
 > wxml
+
   <canvas class="canvas1" type="2d" canvas-id="c1"></canvas>
 > wxss
+
   .canvas1{
   height: 500px;
   width: 300px;
   background-color: #f1f1f1;
 }
 > wxjs
+
   onLoad() {
     wx.createSelectorQuery().select(".canvas1").node(res=>{
       console.log(res)
